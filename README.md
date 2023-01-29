@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Product Card
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Карточка продукта в 3 вариантах, чтобы показать "поведение" содержимого при разных условиях:
 
-## Available Scripts
+1. Когда много текста в заголовке карточки, но немного текста в описании продукта.
+2. Когда немного текста в заголовке карточки, но много текста в описании продукта.
+3. Когда очень много текста в описании продукта, больше 5 символов в цене и много текста в локации.
 
-In the project directory, you can run:
+## Использованные технологии
 
-### `npm start`
+- Проект выполнен при помощи [Create React App](https://github.com/facebook/create-react-app).
+- Стек: HTML, CSS, React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Задание: сверстать карточку продукта [по макету в Figme](https://www.figma.com/file/R6eiBRT59ogm2udA9uPpKb/Product-card?node-id=1%3A2576&t=E9kGU8sTNlPAWIYQ-1) со следующими условиями:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Карточка тянется на всю ширину контейнера, в который помещается. Предположим, что он может быть от 960 до 1440 пикселов. Подозреваю, что на меньших или больших размерах потребуется радикально менять внешний вид. Оставим это за рамками задания.
+2. Высота карточки подстраивается под её содержимое.
+3. Картинка всегда сохраняет свои пропорции 4:3 и вытягивается на всю высоту карточки. Максимальная ширина картинки должна быть не более 45% ширины карточки. Можно использовать любую подходящую иллюстрацию.
+4. Текстовый контент может быть различной длины и содержания. Карточка должна подстраиваться под него, не ломаясь. В макете представлены некоторые возможные варианты.
+5. Цена может быть как 2-3 символа, так и 5-6. На это тоже нужно обратить внимание.
+6. Теги выводятся в одну строку. Их может быть много. Те, которые не уместились, полностью скрываются. Нельзя обрезать или переносить отдельные слова в тегах.
+7. Локация всегда прибивается к нижнему краю карточки. Выводится в одну строку. Лишняя часть скрывается за троеточием.
 
-### `npm test`
+## Решения по каждому пункту условий:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Контейнеру, где находится карточка, задана ширина в 100%, минимальная ширина в 960px, максимальная ширина в 1440px.
+2. Не задана высота карточки, чтобы высота подстраивалась под её содержимое.
+3. Высота картинки равна 100%, чтобы она вытягивалась на всю высоту карточки. Использован `display: grid` с `grid-template-columns: 45% 55%`, чтобы ширина картинки не превышала 45% от ширины карточки.
+4. Не указана высота у блоков с текстовым контентом, чтобы карточка подстаивалась под него.
+5. У цены задано css-свойство `white-space: nowrap` и у блока, объединяющего цену и описание, заданы: `display: flex`, `justify-content: space-between`, `flex-direction: row` и ключевое `gap: 16px`, чтобы не ломалась вёрстка при длине цены в более, чем 5 символов.
+6. Блоку с тегами задано css-свойство `flex-flow: row wrap`, высота блока подобрана по высоте строки и составляет 26px, а всё, что переносится на следующие строки, скрывается. Таким образом, теги выводятся только в одну строку, а те, что не уместились - скрываются.
+7. Локация и весь остальной текстовый контент объединены в отдельный блок, которому заданы css-свойства: `display: flex`, `flex-direction: column` и `justify-content: space-between`. Таким образом, локация всегда прибивается к нижнему краю карточки. Чтобы она выводилась в одну строку, а лишняя часть скрывалась за троеточием, использованы css-свойства: `white-space: nowrap`, `overflow: hidden` и `text-overflow: ellipsis`.
 
-### `npm run build`
+## Сложности при выполнении условий:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Не удалось добиться условия, при котором картинка сохраняет свои пропорции 4:3 и при этом вытягивается на всю высоту карточки, так как это, на мой взгляд, взаимоисключающие требования. Например, если текстового контента очень много и картинка вытянется по всей высоте карточки, то она не сможет сохранить пропорции 4:3. Чтобы картинка сохранила такие пропорции, можно добавить ей css-свойство `aspect-ratio: 4/3`, но тогда необходимо убрать ограничение по высоте, а это невозможно, так как требуется, чтобы она вытягивалась на всю высоту карточки.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Как развернуть приложение на своей локальной машине
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. В командной строке открыть нужную папку и ввести:
 
-### `npm run eject`
+### `git clone https://github.com/NadinePlatonova/product-card.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Открыть проект:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `cd product-card`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Установить зависимости:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `npm install`
 
-## Learn More
+4. Запустить проект:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `npm run start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Открыть [http://localhost:3000](http://localhost:3000), чтобы посмотреть проект в своем браузере.
