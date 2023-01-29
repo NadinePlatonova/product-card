@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/product-card/static/css/main.e2671b41.css",
+    "main.js": "/product-card/static/js/main.d1a6f6db.js",
+    "static/js/787.c0cc0218.chunk.js": "/product-card/static/js/787.c0cc0218.chunk.js",
+    "static/media/Lato-Bold.woff": "/product-card/static/media/Lato-Bold.89b618086a797a8be0f4.woff",
+    "static/media/Lato-Regular.woff": "/product-card/static/media/Lato-Regular.1d2ca94dfba6f8d87cfd.woff",
+    "static/media/product.jpg": "/product-card/static/media/product.22c4be38d2e3f1ef8c3e.jpg",
+    "static/media/Lato-Bold.woff2": "/product-card/static/media/Lato-Bold.21b3848a32fce5b0f501.woff2",
+    "static/media/Lato-Regular.woff2": "/product-card/static/media/Lato-Regular.75614cfcfedd509b1f7a.woff2",
+    "index.html": "/product-card/index.html",
+    "main.e2671b41.css.map": "/product-card/static/css/main.e2671b41.css.map",
+    "main.d1a6f6db.js.map": "/product-card/static/js/main.d1a6f6db.js.map",
+    "787.c0cc0218.chunk.js.map": "/product-card/static/js/787.c0cc0218.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2671b41.css",
+    "static/js/main.d1a6f6db.js"
+  ]
+}
