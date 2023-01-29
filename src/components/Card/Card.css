@@ -1,27 +1,34 @@
 .card {
+    min-width: 960px;
     max-width: 1440px;
-    width: 960px;
-    max-width: 1440px;
+    width: 100%;
     display: grid;
     grid-template-columns: 45% 55%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    padding: 0;
     margin: 37px auto;
+    padding: 0;
 }
 
 .card__content {
-    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 32px 28px;
 }
 
 .card__image {
+    max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px 0 0 8px;
+    /* aspect-ratio: 4/3; */
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
 }
 
 .card__header {
@@ -36,8 +43,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    gap: 16px;
     margin: 0;
-    padding: 16px 0 0;
+    padding: 16px 0 8px;
 }
 
 .card__description-header {
@@ -46,6 +54,7 @@
     font-size: 24px;
     line-height: 36px;
     margin: 0;
+    padding: 0;
 }
 
 .card__description-price {
@@ -55,21 +64,7 @@
     line-height: 36px;
     color: #C1122A;
     margin: 0;
-}
-
-.tag__text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0;
-}
-
-.tags__circle {
-    background: #BFC5CE;
-    border-radius: 50%;
-    width: 6px;
-    height: 6px;
+    white-space: nowrap;
 }
 
 .card__tags {
@@ -77,20 +72,53 @@
     flex-direction: row;
     gap: 12px;
     align-items: center;
-    padding: 0 0 35px;
+    /* padding: 8px 0 35px; */
+    padding: 0;
+    margin: 0;
+    flex-flow: row wrap;
+    height: 26px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.card__tag {
+    font-size: 22px;
+    margin: 0 16px 0 0;
+    padding: 0;
+    color: #BFC5CE;
+}
+
+.card__tag:last-of-type {
+    margin: 0;
+}
+
+.card__tag-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    color: #474342;
+}
+
+.card__tag:first-of-type {
+    list-style: none;
 }
 
 .card__location {
     display: flex;
     flex-direction: row;
     gap: 8px;
+    padding: 27px 0 0;
 }
 
 .card__location-img {
-    background: url(../../images/location.png);
+    background-image: url(../../images/location.png);
     background-repeat: no-repeat;
-    width: 14px;
-    height: 19.47px;
+    background-position: center;
+    width: 24px;
+    height: 24px;
 }
 
 .card__location-text {
@@ -99,4 +127,7 @@
     font-size: 16px;
     line-height: 24px;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -1,25 +1,27 @@
 import React from "react";
-import image from "../../images/product.png"
+import image from "../../images/product.jpg"
 import './Card.css'
 
-function Card() {
+function Card(props) {
     return (
         <article className="card">
             <img className="card__image" src={image} alt="Product" />
             <div className="card__content">
-                <p className="card__header">Fruits and vegetables are packed with essential vitamins, minerals, and nutrients that are essential for maintaining a healthy body and mind</p>
-                <div className="card__description">
-                    <p className="card__description-header">Fruits and vegetables</p>
-                    <p className="card__description-price">$ 3.90</p>
+                <div className="card__info">
+                    <p className="card__header">{props.title}</p>
+                    <div className="card__description">
+                        <p className="card__description-header">{props.description}</p>
+                        <p className="card__description-price">{props.price}</p>
+                    </div>
+                    <ul className="card__tags">
+                        <li className="card__tag"><p className="card__tag-text">Fresh</p></li>
+                        <li className="card__tag"><p className="card__tag-text">Healthy food</p></li>
+                    </ul>
                 </div>
-                <div className="card__tags">
-                    <p className="tag__text">Fresh</p>
-                    <div className="tags__circle"></div>
-                    <p className="tag__text">Healthy food</p>
-                </div>
+                
                 <div className="card__location">
                     <div className="card__location-img"></div>
-                    <p className="card__location-text">Newport Beach, CA, USA</p>
+                    <p className="card__location-text">{props.location}</p>
                 </div>
             </div>
         </article>
