@@ -15,7 +15,7 @@ Product card in 3 variants to show the "behavior" of the content under different
 - The project was implemented using [Create React App](https://github.com/facebook/create-react-app).
 - Stack: HTML, CSS, React.
 
-## Task: create a product card layout [по макету в Figma](https://www.figma.com/file/R6eiBRT59ogm2udA9uPpKb/Product-card?node-id=1%3A2576&t=E9kGU8sTNlPAWIYQ-1) with the following requirements:
+## Task: create a product card layout [according to the Figma design](https://www.figma.com/file/R6eiBRT59ogm2udA9uPpKb/Product-card?node-id=1%3A2576&t=E9kGU8sTNlPAWIYQ-1) with the following requirements:
 
 1. The card stretches to the full width of the container it is placed in. Assume that this container can be from 960 to 1440 pixels wide. I suspect that on smaller or larger sizes, a radical change in appearance will be required. Let's leave that out of the scope of this task.
 2. The height of the card adjusts to its content.
