@@ -8,7 +8,7 @@ function Card(props) {
             <img className="card__image" src={image} alt="Product" />
             <div className="card__content">
                 <div className="card__info">
-                    <p className="card__header">{props.title}</p>
+                    <h1 className="card__header">{props.title}</h1>
                     <div className="card__description">
                         <p className="card__description-header">{props.description}</p>
                         <p className="card__description-price">{props.price}</p>
